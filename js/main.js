@@ -19,7 +19,7 @@ button.addEventListener ('click' , function(){
 
         selectBarr = document.getElementById('select').value;
         
-        if (selectBarr == 0){
+        if (selectBarr == 0) {
             numCel = 0;
             alert("Attenzione, inserire livello di difficoltà");            
         } else if (selectBarr == 1) {
@@ -29,11 +29,13 @@ button.addEventListener ('click' , function(){
         } else {
             numCel = 49;
         }
-        generaBombe(numCel);
-        console.log('Le bombe sono: ' + bombe);
-        console.log(bombe);
-        
-        generaCell(numCel, selectBarr);
+        if (selectBarr != 0) {
+            generaBombe(numCel);
+            console.log('Le bombe sono: ' + bombe);
+            console.log(bombe);
+            
+            generaCell(numCel, selectBarr);
+        }
     
 })
 
