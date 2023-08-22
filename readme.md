@@ -16,6 +16,10 @@ Aggiungere una select accanto al bottone di generazione, che fornisca una scelta
 - difficoltà 1 ⇒ 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe;
 - difficoltà 2 ⇒ 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 - difficoltà 3 ⇒ 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
+
+**SUPER BONUS:**
+
+- Quando si clicca su una bomba e finisce la partita, evitare che si possa cliccare su altre celle.
 ---
 *Consigli del giorno:*
 
@@ -43,3 +47,11 @@ Le validazioni e i controlli possiamo farli anche in un secondo momento.
     - se l'utente clicca su una cella e questa è nella lista delle bombe, l'utente avrà perso e verrà visualizzato il punteggio finale dell'utente
 
     - se il numero delle celle meno il numero delle celle cliccate è uguale alla lunghezza dell'array delle bombe + 1 (in modo tale che il messaggio venga visualizzato nel momento in cui l'ultima cella verrà cliccata), allora comparirà la scritta "hai vinto con un punteggio totale di: TOT ".
+
+**Svolgimento SUPERBONUS:**
+
+- creo una variabile di controllo per i click e la inizializzo a 0
+
+- all'interno del click della cella metto la condizione che può avvenire qualcosa solo se il controlloClick è uguale a 0
+
+- quando il gioco finisce, per qualsiasi motivo, incremento il controllo click in modo da farlo essere diverso da 0 e rendere la griglia non più cliccabile.

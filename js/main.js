@@ -9,13 +9,16 @@ let numCel = 0;
 
 const bombe = [];
 
-let punteggio = 0
+let punteggio = 0;
+
+let controlloClick = 0;
 
 button.addEventListener ('click' , function(){
      
         grid.innerHTML = '';
         bombe.splice(0, bombe.length);
         punteggio = 0;
+        controlloClick = 0;
 
         selectBarr = document.getElementById('select').value;
         
@@ -53,29 +56,36 @@ function generaCell () {
         } else {
             cell.classList.add('cell7');
         }
+            
         
             cell.addEventListener ('click', function() {
-
-                if ( (numCel - punteggio) == bombe.length + 1){
-                    alert('COMPLIMENTI HAI VINTO CON UN PUNTEGGIO DI: ' + punteggio);
-                }
                 
-                if (bombe.includes(index)) {
-                    cell.classList.add('red');
-                    console.log('BOMBA! casella numero: ' + index);
-                    alert('FINE PARTITA');
-                    alert('IL TUO PUNTEGGIO: ' + punteggio);
+                if (controlloClick == 0) {
+                    if ( (numCel - punteggio) == bombe.length + 1){
+                        alert('COMPLIMENTI HAI VINTO CON UN PUNTEGGIO DI: ' + punteggio);
+                        controlloClick++;
+                    }
                     
-                } else {
+                    if (bombe.includes(index)) {
+                        cell.classList.add('red');
+                        console.log('BOMBA! casella numero: ' + index);
+                        alert('FINE PARTITA');
+                        alert('IL TUO PUNTEGGIO: ' + punteggio);
+                        controlloClick++;
 
-                cell.classList.add('skyblue');
-                console.log('cella numero: ' + index);
-                punteggio++;
-                
+                    } else {
+
+                    cell.classList.add('skyblue');
+                    console.log('cella numero: ' + index);
+                    punteggio++;
+                    
+                    }
                 }
-                // console.log('punteggio: ' + punteggio);
+                // volendo qui si potrebbe aggiungere un else per resettare la griglia
+                //  ma ho preferito lasciarla visibile
+                
             })
-        
+       
         grid.append(cell);
     }
 }
