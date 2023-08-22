@@ -1,0 +1,47 @@
+.barra_select {
+    width: fit-content;
+    display: inline-block;
+}
+
+
+
+#griglia {
+    /* background-color: blue; */
+    width: 800px;
+    /* min-height: 1px; */
+    /* aspect-ratio: 1; */
+    /* margin-top: 20px; */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+
+.cell {
+    
+    aspect-ratio: 1;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.cell10 {
+    width: calc( 100% / 10); 
+}
+
+.cell9 {
+    width: calc( 100% / 9); 
+}
+
+.cell7 {
+    width: calc( 100% / 7); 
+}
+
+.skyblue {
+    background-color: skyblue;
+}
+
+.red {
+    background-color: red;
+}
